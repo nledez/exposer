@@ -11,9 +11,11 @@ import (
 // EnvVars represents a map of environment variables
 type EnvVars map[string]string
 
+const Version = "0.1.0"
+
 func main() {
 	var listen = "0.0.0.0:8080"
-	fmt.Printf("Listen on: %v\n", listen)
+	fmt.Printf("Starting server version %s on %s\n", Version, listen)
 	http.HandleFunc("/env", envHandler)
 	http.ListenAndServe(listen, nil)
 }
