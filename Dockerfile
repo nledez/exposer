@@ -5,7 +5,7 @@ WORKDIR /app
 COPY go.mod ./
 RUN go mod download
 
-COPY main.go .
+COPY exposer.go .
 
 RUN go build
 RUN ls -alrt
